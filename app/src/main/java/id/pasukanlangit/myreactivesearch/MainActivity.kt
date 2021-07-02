@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                lifecycleScope.launch {
-                   viewModel.queryChannel.send(s.toString())
+                   viewModel.queryStateFlow.value = s.toString()
                }
             }
 
